@@ -8,6 +8,19 @@ namespace FizzBuzz.Services{
         string Print();
     }
 
+    public interface IOutputService
+    {
+        void Print(string output);
+    }
+
+    public class ConsoleOutputService : IOutputService
+    {
+        public void Print(string output)
+        {
+            Console.WriteLine(output);
+        }
+    }
+
     internal class FizzRule : IGeneralFizzBuzzRule
     {
         public bool Check(int number) => number % 3 == 0;
@@ -29,6 +42,7 @@ namespace FizzBuzz.Services{
     public class FizzBuzzService
     {
         private readonly List<IGeneralFizzBuzzRule> _rules;
+        private readonly IOutputService _outputService;
 
         public FizzBuzzService(){
             _rules = new List<IGeneralFizzBuzzRule>
@@ -37,6 +51,8 @@ namespace FizzBuzz.Services{
                 new FizzRule(),
                 new BuzzRule()
             };
+
+            _outputService = new ConsoleOutputService(); 
         }
 
         public List<string> Generate(int lower, int upper){
@@ -44,6 +60,11 @@ namespace FizzBuzz.Services{
             foreach (int val in Enumerable.Range(lower, upper)){
                 stringValues.Add(GenerateSingle(val));
             }
+
+            foreach(var singleValue in stringValues){
+                _outputService.Print(singleValue); // Output to the console
+            }
+
             return stringValues;
         }
 
