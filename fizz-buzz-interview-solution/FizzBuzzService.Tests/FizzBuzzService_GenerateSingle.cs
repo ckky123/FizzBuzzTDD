@@ -38,21 +38,14 @@ namespace FizzBuzz.UnitTests.Services{
             Assert.Equal("Buzz", result);
         }
 
-        [Fact]
-        public void GenerateSingle_ShouldReturnFizzBuzz_WhenCalledWith15()
+        [Theory]
+        [InlineData(15)]
+        [InlineData(30)]
+        public void GenerateSingle_ShouldReturnFizzBuzz_WhenCalledWithMultipleOf15(int value)
         {
             var FizzBuzz = new FizzBuzzService();
 
-            var result = FizzBuzz.GenerateSingle(15);
-            Assert.Equal("FizzBuzz", result);
-        }
-
-        [Fact]
-        public void GenerateSingle_ShouldReturnFizzBuzz_WhenCalledWith30()
-        {
-            var FizzBuzz = new FizzBuzzService();
-
-            var result = FizzBuzz.GenerateSingle(30);
+            var result = FizzBuzz.GenerateSingle(value);
             Assert.Equal("FizzBuzz", result);
         }
 
