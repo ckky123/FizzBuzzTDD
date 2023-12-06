@@ -10,7 +10,7 @@ namespace FizzBuzz.UnitTests.Services{
             var FizzBuzz = new FizzBuzzService();
 
             var result = FizzBuzz.GenerateSingle(1);
-            Assert.Equal(result, "1");
+            Assert.Equal("1", result);
         }
     }
 }
