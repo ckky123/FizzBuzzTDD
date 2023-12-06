@@ -8,7 +8,7 @@ namespace FizzBuzz.UnitTests.Services{
         {
             var FizzBuzz = new FizzBuzzService();
 
-            FizzBuzz.Generate();
+            FizzBuzz.Generate(1, 1);
         }
     }
 }

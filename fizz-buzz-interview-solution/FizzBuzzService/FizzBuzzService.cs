@@ -38,8 +38,8 @@ namespace FizzBuzz.Services{
             };
         }
 
-        public void Generate(){
-            return;
+        public List<string> Generate(int lower, int upper){
+            return new List<string>();
         }
 
         public string GenerateSingle(int number){
