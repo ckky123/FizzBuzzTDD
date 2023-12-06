@@ -16,40 +16,27 @@ namespace FizzBuzz.UnitTests.Services{
             Assert.Equal(expected, result);
         }
 
-        [Fact]
-        public void GenerateSingle_ShouldReturnFizz_WhenCalledWith3()
+        [Theory]
+        [InlineData(3)]
+        [InlineData(6)]
+        public void GenerateSingle_ShouldReturnFizz_WhenCalledWithSimpleMultipleOf3(int value)
         {
             var FizzBuzz = new FizzBuzzService();
 
-            var result = FizzBuzz.GenerateSingle(3);
+            var result = FizzBuzz.GenerateSingle(value);
             Assert.Equal("Fizz", result);
         }
 
-        [Fact]
-        public void GenerateSingle_ShouldReturnFizz_WhenCalledWith6()
+        [Theory]
+        [InlineData(5)]
+        [InlineData(10)]
+        public void GenerateSingle_ShouldReturnFizz_WhenCalledWithSimpleMultipleOf5(int value)
         {
             var FizzBuzz = new FizzBuzzService();
 
-            var result = FizzBuzz.GenerateSingle(6);
-            Assert.Equal("Fizz", result);
-        }
-
-        [Fact]
-        public void GenerateSingle_ShouldReturnBuzz_WhenCalledWith5()
-        {
-            var FizzBuzz = new FizzBuzzService();
-
-            var result = FizzBuzz.GenerateSingle(5);
+            var result = FizzBuzz.GenerateSingle(value);
             Assert.Equal("Buzz", result);
         }
 
-        [Fact]
-        public void GenerateSingle_ShouldReturnBuzz_WhenCalledWith10()
-        {
-            var FizzBuzz = new FizzBuzzService();
-
-            var result = FizzBuzz.GenerateSingle(10);
-            Assert.Equal("Buzz", result);
-        }
     }
 }
