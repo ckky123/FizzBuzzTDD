@@ -27,22 +27,23 @@ namespace FizzBuzz.Services{
 
     public class FizzBuzzService
     {
+        private readonly List<IGeneralFizzBuzzRule> _rules;
+
+        public FizzBuzzService(){
+            _rules = new List<IGeneralFizzBuzzRule>
+            {
+                new FizzBuzzRule(),
+                new FizzRule(),
+                new BuzzRule()
+            };
+        }
+
         public void Generate(){
             return;
         }
 
         public string GenerateSingle(int number){
-
-            var _rules = new List<IGeneralFizzBuzzRule>
-            {
-                new FizzBuzzRule(),
-                new FizzRule(),
-                new BuzzRule()
-
-            };
-
             var rule = _rules.FirstOrDefault(r => r.Check(number));
-
             return rule?.Print() ?? number.ToString();
         }
 
