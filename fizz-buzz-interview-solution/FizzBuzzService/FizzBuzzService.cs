@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace FizzBuzz.Services{
     public interface IGeneralFizzBuzzRule
@@ -40,7 +41,9 @@ namespace FizzBuzz.Services{
 
         public List<string> Generate(int lower, int upper){
             var values = new List<string>();
-            values.Add("");
+            foreach (int val in Enumerable.Range(lower, upper)){
+                values.Add("");
+            }
             return values;
         }
 
