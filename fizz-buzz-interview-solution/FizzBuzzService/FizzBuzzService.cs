@@ -32,22 +32,18 @@ namespace FizzBuzz.Services{
         }
 
         public string GenerateSingle(int number){
-            var FizzRule = new FizzRule();
-            var BuzzRule = new BuzzRule();
-            var FizzBuzzRule = new FizzBuzzRule();
 
-            if (FizzBuzzRule.Check(number)){
-                return FizzBuzzRule.Print();
-            }
-            else if (FizzRule.Check(number)){
-                return FizzRule.Print();
-            }
-            else if (BuzzRule.Check(number)){
-                return BuzzRule.Print();
-            }
-            else{
-                return number.ToString();
-            }
+            var _rules = new List<IGeneralFizzBuzzRule>
+            {
+                new FizzBuzzRule(),
+                new FizzRule(),
+                new BuzzRule()
+
+            };
+
+            var rule = _rules.FirstOrDefault(r => r.Check(number));
+
+            return rule?.Print() ?? number.ToString();
         }
 
     }
