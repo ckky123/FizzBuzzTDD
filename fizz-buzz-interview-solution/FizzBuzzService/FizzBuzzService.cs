@@ -39,7 +39,9 @@ namespace FizzBuzz.Services{
         }
 
         public List<string> Generate(int lower, int upper){
-            return new List<string>();
+            var values = new List<string>();
+            values.Add("");
+            return values;
         }
 
         public string GenerateSingle(int number){
