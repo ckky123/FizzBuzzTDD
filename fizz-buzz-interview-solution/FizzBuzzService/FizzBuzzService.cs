@@ -1,6 +1,12 @@
 ﻿using System;
 
 namespace FizzBuzz.Services{
+    internal class FizzRule
+    {
+        public bool Check(int number) => number % 3 == 0;
+        public string Print() => "Fizz";
+    }
+
     public class FizzBuzzService
     {
         public void Generate(){
@@ -8,11 +14,13 @@ namespace FizzBuzz.Services{
         }
 
         public string GenerateSingle(int number){
+            var FizzRule = new FizzRule();
+
             if (number % 15 == 0){
                 return "FizzBuzz";
             }
-            else if (number % 3 == 0){
-                return "Fizz";
+            else if (FizzRule.Check(number)){
+                return FizzRule.Print();
             }
             else if(number % 5 == 0){
                 return "Buzz";
@@ -21,5 +29,6 @@ namespace FizzBuzz.Services{
                 return number.ToString();
             }
         }
+
     }
 }
