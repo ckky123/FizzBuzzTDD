@@ -40,11 +40,11 @@ namespace FizzBuzz.Services{
         }
 
         public List<string> Generate(int lower, int upper){
-            var values = new List<string>();
+            var stringValues = new List<string>();
             foreach (int val in Enumerable.Range(lower, upper)){
-                values.Add("");
+                stringValues.Add(GenerateSingle(val));
             }
-            return values;
+            return stringValues;
         }
 
         public string GenerateSingle(int number){
