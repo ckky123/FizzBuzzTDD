@@ -30,5 +30,14 @@ namespace FizzBuzz.UnitTests.Services{
             var result = FizzBuzz.GenerateSingle(3);
             Assert.Equal("Fizz", result);
         }
+
+        [Fact]
+        public void GenerateSingle_ShouldReturnFizz_WhenCalledWith6()
+        {
+            var FizzBuzz = new FizzBuzzService();
+
+            var result = FizzBuzz.GenerateSingle(6);
+            Assert.Equal("Fizz", result);
+        }
     }
 }
