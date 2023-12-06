@@ -1,4 +1,5 @@
 using FizzBuzz.Services;
+using Xunit;
 
 namespace FizzBuzz.UnitTests.Services{
     public class FizzBuzzService_GenerateSingle
@@ -9,6 +10,7 @@ namespace FizzBuzz.UnitTests.Services{
             var FizzBuzz = new FizzBuzzService();
 
             var result = FizzBuzz.GenerateSingle(1);
+            Assert.Equal(result, "1");
         }
     }
 }
