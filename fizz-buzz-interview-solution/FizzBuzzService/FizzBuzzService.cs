@@ -7,8 +7,8 @@ namespace FizzBuzz.Services{
             return;
         }
 
-        public void GenerateSingle(){
-            return;
+        public string GenerateSingle(int number){
+            return "";
         }
     }
 }
