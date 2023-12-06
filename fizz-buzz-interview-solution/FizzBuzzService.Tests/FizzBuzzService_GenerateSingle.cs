@@ -21,5 +21,14 @@ namespace FizzBuzz.UnitTests.Services{
             var result = FizzBuzz.GenerateSingle(2);
             Assert.Equal("2", result);
         }
+
+        [Fact]
+        public void GenerateSingle_ShouldReturnFizz_WhenCalledWith3()
+        {
+            var FizzBuzz = new FizzBuzzService();
+
+            var result = FizzBuzz.GenerateSingle(3);
+            Assert.Equal("Fizz", result);
+        }
     }
 }
