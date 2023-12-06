@@ -8,7 +8,7 @@ namespace FizzBuzz.Services{
         }
 
         public void GenerateSingle(){
-            throw new NotImplementedException("Method note implemented");
+            return;
         }
     }
 }
