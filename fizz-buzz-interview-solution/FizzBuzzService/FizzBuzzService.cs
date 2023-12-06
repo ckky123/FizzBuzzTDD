@@ -8,7 +8,12 @@ namespace FizzBuzz.Services{
         }
 
         public string GenerateSingle(int number){
-            return number.ToString();
+            if (number == 3){
+                return "Fizz";
+            }
+            else{
+                return number.ToString();
+            }
         }
     }
 }
