@@ -4,22 +4,16 @@ using Xunit;
 namespace FizzBuzz.UnitTests.Services{
     public class FizzBuzzService_GenerateSingle
     {
-        [Fact]
-        public void GenerateSingle_ShouldReturn1_WhenCalledWith1()
+        [Theory]
+        [InlineData(1, "1")]
+        [InlineData(2, "2")]
+        [InlineData(4, "4")]
+        public void GenerateSingle_ShouldReturnStringOfNumber_WhenCalledWithSimpleValue(int value, string expected)
         {
             var FizzBuzz = new FizzBuzzService();
 
-            var result = FizzBuzz.GenerateSingle(1);
-            Assert.Equal("1", result);
-        }
-
-        [Fact]
-        public void GenerateSingle_ShouldReturn2_WhenCalledWith2()
-        {
-            var FizzBuzz = new FizzBuzzService();
-
-            var result = FizzBuzz.GenerateSingle(2);
-            Assert.Equal("2", result);
+            var result = FizzBuzz.GenerateSingle(value);
+            Assert.Equal(expected, result);
         }
 
         [Fact]
