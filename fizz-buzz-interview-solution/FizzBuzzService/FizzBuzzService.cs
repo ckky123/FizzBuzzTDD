@@ -8,7 +8,7 @@ namespace FizzBuzz.Services{
         }
 
         public string GenerateSingle(int number){
-            if (number == 15){
+            if (number % 15 == 0){
                 return "FizzBuzz";
             }
             else if (number % 3 == 0){
